@@ -17,7 +17,7 @@ import sys
 import numpy as np
 
 # ---------------------------------------------------------------------------
-# Named constants (edit here instead of hunting through the code)
+# Named constants
 # ---------------------------------------------------------------------------
 DEFAULT_LATTICE_SIZE = 32
 DEFAULT_TEMPERATURE = 2.0
@@ -115,7 +115,7 @@ def run_md(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Latticelab – computational physics simulations",
+        description="Latticelab - computational physics simulations",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
@@ -127,7 +127,7 @@ def parse_args() -> argparse.Namespace:
 
     ising_group = parser.add_argument_group("Ising Model")
     ising_group.add_argument("--size", type=int, default=DEFAULT_LATTICE_SIZE,
-                             help="Lattice side length (N×N).")
+                             help="Lattice side length (NxN).")
     ising_group.add_argument("--temp", type=float, default=DEFAULT_TEMPERATURE,
                              help="Simulation temperature (kT/J).")
     ising_group.add_argument("--steps", type=int, default=DEFAULT_ISING_STEPS,
@@ -164,7 +164,7 @@ def main() -> None:
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
 
-    logger.info("Welcome to Latticelab – Computational Physics Simulations")
+    logger.info("Welcome to Latticelab - Computational Physics Simulations")
 
     if args.sim in ("ising", "all"):
         run_ising(
